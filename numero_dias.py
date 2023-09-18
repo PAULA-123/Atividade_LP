@@ -2,6 +2,8 @@ import datetime
 
 from datetime import datetime
 
+import locale
+locale.setlocale(locale.LC_ALL, "pt_BR.utf8")
 
 # #data final 
 # d2 = datetime.strptime("2017-05-05", "%Y-%m-%d")
