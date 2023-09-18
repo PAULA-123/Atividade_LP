@@ -29,7 +29,7 @@ if entrada != "S" :
 
             # return diferenca_de_dias
         print("é um arquivo")
-        entrada = input("Digite S para sair ou insira as datas ou o arquivo para o cálculo: ")
+        
        
 
     else:
