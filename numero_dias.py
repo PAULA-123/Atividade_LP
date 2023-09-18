@@ -20,7 +20,7 @@ def diferenca_dias_input(entrada):
             return diferenca_de_dias
 
 
-if entrada != "S" :
+if entrada != "S" and entrada != "s" :
     
     if entrada[-4:]== ".txt":
         # def diferenca_dias_arq():
