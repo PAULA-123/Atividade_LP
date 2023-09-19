@@ -3,7 +3,7 @@ from datetime import datetime
 import locale
 locale.setlocale(locale.LC_ALL, "pt_BR.utf8")
 
-entrada = input("Digite S para sair ou insira as datas ou o arquivo para o cálculo: ")
+# entrada = input("Digite S para sair ou insira as datas ou o arquivo para o cálculo: ")
 
 def diferenca_dias_input(entrada):
 
@@ -20,24 +20,24 @@ def diferenca_dias_input(entrada):
             return diferenca_de_dias
 
 
-if entrada != "S" and entrada != "s" :
+# if entrada != "S" and entrada != "s" :
     
-    if entrada[-4:]== ".txt":
-        # def diferenca_dias_arq():
-        #     arquivo = input("Passe um arquivo de texto:")
-        #     diferenca_de_dias = 
+#     if entrada[-4:]== ".txt":
+#         # def diferenca_dias_arq():
+#         #     arquivo = input("Passe um arquivo de texto:")
+#         #     diferenca_de_dias = 
 
-            # return diferenca_de_dias
-        print("é um arquivo")
+#             # return diferenca_de_dias
+#         print("é um arquivo")
         
        
 
-    else:
-        print(diferenca_dias_input(entrada))
+#     else:
+#         print(diferenca_dias_input(entrada))
         
 
-else:
-    print("Obrigada pela participação!")
+# else:
+#     print("Obrigada pela participação!")
 
 # print(diferenca_dias_input())
 
