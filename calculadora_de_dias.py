@@ -1,48 +1,21 @@
-# <Tela@MDFloatLayout>:
-    # MDFlatButton:
-    #     text: "Botão 1"
-    #     size_hint_x: .2
-    #     size_hint_y: .1
-    #     pos_hint:{"center_x":.5, "center_y":.5}
-    #     font_size: "30sp"
-    #     theme_text_color:"Custom"
-    #     text_color: 0.2,0.5,0.5,1
-    #     line_color: 0.2,1,0,1
-
-    # MDLabel:
-    #     text: "0"
-    #     size_hint_x: .3
-    #     size_hint_y: .1
-    #     font_size: "150sp"
-    #     pos_hint:{"center_x": .6, "center_y":.7}
-
-
-# Tela:
-
 import PySimpleGUI as sg
 from numero_dias import diferenca_dias_input
 
 class TelaPython:
     def __init__(self):
         layout = [
-            [sg.Text("Digite S para sair ou insira as datas ou o arquivo para o cálculo: ", size=(50,0)),sg.Input(size=(55,0))],
-            [sg.Button("Enviar Dados", size=(6,0))]
+            [sg.Text("Digite S para sair ou insira as data no formato (dia de mês de ano - dia de mês de ano): ", size=(65,0)),sg.Input(size=(60,0),key="datas")],
+            [sg.Button("Enviar Dados", size=(20,0)), sg.Button("Sair", size=(6,0))], #adicionando um botão para sair
+            [sg.Output(size=(30,20))]
         ]
-        janela = sg.Window("Data inicial e Data final").layout(layout)
-        #Extrair os dados da tela
-        self.button, self.values = janela.Read()
-        self.janela = sg.Window("Data inicial e Data final").layout(layout)
-        if entrada != "S" and entrada != "s" :
-    
-            if entrada[-4:]== ".txt":
-                print("é um arquivo")
-            else:
-                print(diferenca_dias_input(self.button, self.values == janela.Read()))
-                    
-        else:
-            print("Obrigada pela participação!")
+        self.janela = sg.Window("Calculadora de Dias", layout, finalize=True)
         
     def Iniciar(self):
         while True:
-            self.button, self.values = self.janela.Read()
-        print(self.values)
+            event, values = self.janela.read()
+            if event == sg.WINDOW_CLOSED or event == "Sair":
+                break
+            elif event == "Enviar Dados":
+                datas = values["datas"]
+                print(diferenca_dias_input(datas))
+        self.janela.close()
