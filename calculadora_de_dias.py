@@ -1,8 +1,9 @@
+#usamos PySimpleGUI para fazer o app
 import PySimpleGUI as sg
 from numero_dias import diferenca_dias_input
 
 class TelaPython:
-    # Definindo a função com as características da janela do meu app, seus botões, entrada e saída de dados.
+    # Definindo a função com as características da janela do app, seus botões, entrada e saída de dados.
     def __init__(self):
         layout = [
             [sg.Text("insira as data no formato (dia de mês de ano - dia de mês de ano) ou forneça o nome de um arquivo de texto no qual as datas estejam escritas nesse formato: ", size=(75,0)),sg.Input(size=(70,0),key="entrada")],
