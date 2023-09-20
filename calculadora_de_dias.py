@@ -32,12 +32,16 @@ class TelaPython:
                         print("Arquivo não encontrado!")
                     # Tratando a exceção na qual o conteúdo do arquivo .txt não está no formato de data especificado
                     except IndexError:
-                        print("Dados fornecidos com o formato incorreto!")
+                        print("Conteúdo do arquivo está com o formato incorreto!")
                     # Tratando as demais exceções 
                     except Exception:
                         print(f"Erro ao processar o arquivo: {Exception}")
                 # Se não for um arquivo .txt, apenas executa a função que calcula a diferença em dias, usando os dados da entrada como parâmetro.
                 else:
-                    print(diferenca_dias_input(entrada))
-        # Caso o que o usuário informe não seja nem um arquivo .txt e nem uma data com o formato correto para executar a função "diferenca_dias_input", a janela se fecha, encerrando o programa.
+                    try:
+                        print(diferenca_dias_input(entrada))
+                    # Tratando a exceção em que o formato dos dados informados pelo usuário difere do que é pedido na entrada
+                    except IndexError:
+                        print("Dados fornecidos com o formato incorreto!")
+        # Assim que o while passar a ser falso, ou seja, ocorrer algo não mencionado no bloco do while True, a janela se fecha, encerrando o programa.
         self.janela.close()
